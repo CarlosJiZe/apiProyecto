@@ -10,9 +10,11 @@ const{
 
 const auth = require('../config/auth')
 
+const passport = require('passport')
+
 router.get('/',getAnimes)
 router.get('/:id',getAnime)
-router.post('/',auth.required,createAnime)
+router.post('/',passport.authenticate('local',{session:false}),createAnime)
 router.patch('/:id',auth.isAdmin,updateAnime)
 router.delete('/:id',auth.isAdmin,deleteAnime)
 
