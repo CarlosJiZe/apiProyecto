@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const sequelize = require('./config/db')
 const routes = require('./routes')
@@ -16,8 +17,8 @@ try{
     console.log('Unable to connect to DB:',error)
 }
 
-const PORT = 3000
-app.listen(PORT, ()=>{
-    console.log(`Server listening on PORT ${PORT}`)
+
+app.listen(process.env.PORT || 3000, ()=>{
+    console.log(`Server listening on PORT ${process.env.PORT}`)
 })
 
