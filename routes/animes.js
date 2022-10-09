@@ -14,7 +14,7 @@ const passport = require('passport')
 
 router.get('/',getAnimes)
 router.get('/:id',getAnime)
-router.post('/',passport.authenticate('local',{session:false}),createAnime)
+router.post('/',passport.authenticate('bearer',{session:false}),createAnime)
 router.patch('/:id',auth.isAdmin,updateAnime)
 router.delete('/:id',auth.isAdmin,deleteAnime)
 
