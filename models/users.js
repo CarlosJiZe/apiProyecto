@@ -32,11 +32,11 @@ const User = sequelize.define('User',{
         }
     },
     password_hash: {
-        type:DataTypes.STRING(64),
+        type:DataTypes.STRING,
         allowNull:true
     },
     password_salt:{
-        type:DataTypes.STRING(64),
+        type:DataTypes.STRING,
         allowNull:true
     },
     admin:{
